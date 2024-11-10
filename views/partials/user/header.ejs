@@ -1,0 +1,48 @@
+<header>
+  <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
+          class="d-inline-block align-text-top">
+        <%= locals.title %>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav">
+          <% if (typeof user !== 'undefined') { %>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="/game">
+                <i class="bi bi-controller"></i>
+                Dragon Repeller
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-danger" href="/logout">
+                <i class="bi bi-box-arrow-left"></i>
+                Sign Out
+              </a>
+            </li>
+          <% } else { %>
+           
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="/login">
+                <i class="bi bi-box-arrow-in-right"></i>
+                Sign In
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-info" href="/register">
+                <i class="bi bi-person-fill-add"></i>
+                Sign Up
+              </a>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</header>
